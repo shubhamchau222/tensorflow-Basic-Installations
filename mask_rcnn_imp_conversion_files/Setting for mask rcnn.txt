@@ -1,0 +1,65 @@
+ research > object detection 
+		dir : traindata >
+			dir : testimg 
+			dir : testjson
+			dir : trainimg 
+			dir : trainjson 
+
+
+ research > object detection > data 
+			  file :  labelmapdog.pbtxt ( create dog_labelmap.pbtxt) 
+
+# move all data correspondingly 
+# set the Data path in [create_tf_record.py] file accordingly..
+# create_tf_record.py ( will generate the Two files train.tfrecord & testtfrecord)
+
+# create the Tfrecords for  Both the Train and test Datasets..
+
+
+#################################################################################################################
+##  let's Download thwe pretrained model from ( Internet )
+## https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md
+- Here i'm selecting < Mask_rcnn_inception_v2 model >
+- Download the .config file for the same model
+
+- Unziip Downloaded pretrained model file and Move to the Reserach dir.
+
+
+
+#####
+  $ cd ./research/
+  $ mkdir customMask_training
+                      # two file inthis folder (labelmpap.pbtxt & config file )
+                      #
+  - copy labelmap.pbtxt from ./objectdetction/data to ./research/customMask_training
+  - copy model configuration file  from ./object_detection/samples/configs/mask_rcnn_inception_v2_coco.config to the ./customMask_training
+
+  $ cp ./object_detection/samples/configs/mask_rcnn_inception_v2_coco.config ./customMask_training
+  $ cp ./object_detection/data/labelmapdog.pbtxt ./customMask_training/
+
+**************************************************************************
+# let's try to make some changes in  mask_rcnn_inception_v2_coco.config file
+
+    $ cd ./research./customMask_training
+    # make changes in mask_rcnn_inception_v2_coco.config
+            -line no : 127 ( set fine tune checkpointpath)
+            - line no :10 ( set the number of classes )
+            - line no :142  ( set the train.record file path )
+            - line no :145  ( set the labelmap.pbtxt file path )
+            - line no :158  ( set the test.record file path )
+            - line no :160  ( set the labelmap.pbtxt file path  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
