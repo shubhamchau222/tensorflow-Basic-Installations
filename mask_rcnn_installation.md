@@ -234,6 +234,17 @@ https://github.com/tensorflow/models/tree/v1.13.0
 - this model can be use for prediction 
 
 
+  
+## Created by 
+
+- [@shubhamchau78](https://www.linkedin.com/in/shubham-chaudhari-3a7270176)
+
+  
+## Tech Stack
+
+**python3.6 , tensorflow 1.14.0**
+
+
 
 
 
