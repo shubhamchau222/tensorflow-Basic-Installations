@@ -1,0 +1,15 @@
+This file helps to convert json data into the ( Tf-records) 
+- Helpful in tfod-MaskRCNN ( which accepts the data in tfrecord format )
+- Flow will be like : 
+		
+	Images => Labelme-TOOL (for masking annotation ) => .json => (create-tf-record) => .tfrecord
+
+
+
+Changes : set the Following paths as per your dataset & dir structure
+
+
+    trainImagePath = "../research/object_detection/traindata/testing"
+    trainImageJsonPath = "../research/object_detection/traindata/testjson"
+    labelMapPath = "../research/object_detection/data/labelmapdog.pbtxt"
+    outputFolderPath = "../research/object_detection/data/custom_test_dog.record"
